@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:gridtest/src/Router/rouTerPage.dart';
 import 'package:gridtest/src/model/productModel.dart';
 import 'package:gridtest/src/service/service.dart';
 
@@ -53,7 +54,12 @@ class _GridTestState extends State<GridTest> {
                         children: [
                           Card(
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Product dataSend = data[i];
+
+                                Navigator.pushNamed(context, Routers.dtail,
+                                    arguments: dataSend);
+                              },
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Stack(
@@ -156,6 +162,7 @@ class _GridTestState extends State<GridTest> {
 
               return Center(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     CircularProgressIndicator(),
                     SizedBox(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gridtest/src/Router/rouTerPage.dart';
 import 'package:gridtest/src/page/gridTest.dart';
 
 void main() {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: GridTest(),
+      routes: Routers.router(),
     );
   }
 }
