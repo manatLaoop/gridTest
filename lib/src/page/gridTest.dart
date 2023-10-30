@@ -90,14 +90,8 @@ class _GridTestState extends State<GridTest> {
                                                     padding:
                                                         const EdgeInsets.all(
                                                             3.0),
-                                                    child: Text(
-                                                      '${data[i].title}',
-                                                      maxLines: 1,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      style: TextStyle(
-                                                          color: Colors.white),
-                                                    ),
+                                                    child: producGridTitle(
+                                                        data, i),
                                                   )),
                                             ],
                                           ),
@@ -108,12 +102,7 @@ class _GridTestState extends State<GridTest> {
                                       child: Container(
                                         child: Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Text(
-                                            '${data[i].price}',
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black),
-                                          ),
+                                          child: productGridPrice(data, i),
                                         ),
                                       ),
                                     ),
@@ -175,5 +164,21 @@ class _GridTestState extends State<GridTest> {
             },
           ),
         ));
+  }
+
+  Text productGridPrice(List<Product> data, int i) {
+    return Text(
+      '${data[i].price}',
+      style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+    );
+  }
+
+  Text producGridTitle(List<Product> data, int i) {
+    return Text(
+      '${data[i].title}',
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(color: Colors.white),
+    );
   }
 }
